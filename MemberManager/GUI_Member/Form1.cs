@@ -15,6 +15,12 @@ namespace GUI_Member
         public Form1()
         {
             InitializeComponent();
+            this.CenterToScreen();s
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
