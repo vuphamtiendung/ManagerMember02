@@ -36,8 +36,15 @@ namespace GUI_Member
             listMember.ForEach(x =>
             {
                 ListViewItem item = new ListViewItem(x.MemberId + "");
-
+                item.SubItems.Add(x.MemberFullName);
+                item.SubItems.Add(x.MemberPhone + "");
+                item.SubItems.Add(x.MemberEmail);
             });
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            DisplayData();
         }
     }
 }
