@@ -32,15 +32,16 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtFullName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lsvMember = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -53,9 +54,9 @@
             this.panel.Controls.Add(this.btnDelete);
             this.panel.Controls.Add(this.btnUpdate);
             this.panel.Controls.Add(this.btnAdd);
-            this.panel.Controls.Add(this.textBox3);
-            this.panel.Controls.Add(this.textBox2);
-            this.panel.Controls.Add(this.textBox1);
+            this.panel.Controls.Add(this.txtEmail);
+            this.panel.Controls.Add(this.txtPhone);
+            this.panel.Controls.Add(this.txtFullName);
             this.panel.Controls.Add(this.label3);
             this.panel.Controls.Add(this.label2);
             this.panel.Controls.Add(this.label1);
@@ -72,6 +73,7 @@
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -81,6 +83,7 @@
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -90,27 +93,28 @@
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // textBox3
+            // txtEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(110, 69);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(161, 20);
-            this.textBox3.TabIndex = 5;
+            this.txtEmail.Location = new System.Drawing.Point(110, 69);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(161, 20);
+            this.txtEmail.TabIndex = 5;
             // 
-            // textBox2
+            // txtPhone
             // 
-            this.textBox2.Location = new System.Drawing.Point(110, 39);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(161, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtPhone.Location = new System.Drawing.Point(110, 39);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(161, 20);
+            this.txtPhone.TabIndex = 4;
             // 
-            // textBox1
+            // txtFullName
             // 
-            this.textBox1.Location = new System.Drawing.Point(110, 11);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtFullName.Location = new System.Drawing.Point(110, 11);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(161, 20);
+            this.txtFullName.TabIndex = 3;
             // 
             // label3
             // 
@@ -159,23 +163,30 @@
             // lsvMember
             // 
             this.lsvMember.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
             this.lsvMember.FullRowSelect = true;
             this.lsvMember.GridLines = true;
             this.lsvMember.HideSelection = false;
-            this.lsvMember.Location = new System.Drawing.Point(3, 3);
+            this.lsvMember.Location = new System.Drawing.Point(3, 6);
             this.lsvMember.Name = "lsvMember";
             this.lsvMember.Size = new System.Drawing.Size(826, 235);
             this.lsvMember.TabIndex = 0;
             this.lsvMember.UseCompatibleStateImageBehavior = false;
             this.lsvMember.View = System.Windows.Forms.View.Details;
+            this.lsvMember.SelectedIndexChanged += new System.EventHandler(this.lsvMember_SelectedIndexChanged);
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "ID";
+            this.columnHeader4.Width = 83;
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Full Name";
-            this.columnHeader1.Width = 261;
+            this.columnHeader1.Width = 238;
             // 
             // columnHeader2
             // 
@@ -185,7 +196,7 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Email";
-            this.columnHeader3.Width = 295;
+            this.columnHeader3.Width = 246;
             // 
             // Form1
             // 
@@ -209,9 +220,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -224,6 +235,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
 

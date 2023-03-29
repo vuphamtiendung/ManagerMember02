@@ -14,7 +14,7 @@ namespace DataAccessLayer
     {
         public DataTable GetData()
         {
-            SqlDataAdapter adapter = new SqlDataAdapter("Select TV_ID, TV_NAME, TV_PHONE, TV_EMAIL", _conn);
+            SqlDataAdapter adapter = new SqlDataAdapter("Select TV_ID, TV_NAME, TV_PHONE, TV_EMAIL From THANHVIEN", _conn);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             return dt;
